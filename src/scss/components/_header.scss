@@ -1,0 +1,302 @@
+@import '../variables';
+@import '../mixins';
+
+.header {
+  position: relative;
+  margin-bottom: $gap;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: $grey-light;
+    z-index: -1;
+  }
+
+  &__nav {
+    align-self: center;
+  }
+
+  &__menu {
+    align-self: auto;
+  }
+
+  &__btn-icon {
+    @include clearDefaultFocus;
+    @include transition;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 5px;
+
+    & path {
+      @include transition;
+    }
+
+    &:focus {
+      background-color: $primary-light;
+    }
+
+    &:focus path {
+      fill: $white;
+    }
+
+    @media (any-hover: hover) {
+      &:hover path {
+        fill: $primary-light;
+      }
+    }
+
+    &:active path {
+      fill: $primary-shade;
+    }
+  }
+
+  &__btn-icon:last-child {
+    position: relative;
+    padding: 4px 4px 0 15px;
+  }
+
+  &__user-btn {
+    display: flex;
+    align-self: center;
+    justify-self: end;
+    gap: 22px;
+    width: 103px;
+  }
+
+  &__phone {
+    display: flex;
+    align-self: center;
+    max-width: 143px;
+    color: $secondary;
+    font-size: 14px;
+    font-weight: 400;
+    @include clearDefaultFocus;
+    @include transition;
+
+    & path {
+      @include transition;
+    }
+
+    &:focus {
+      color: $secondary;
+      background-color: $bone;
+    }
+
+    &:focus path {
+      fill: $secondary;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $secondary-light;
+      }
+
+      &:hover path {
+        fill: $secondary-light;
+      }
+    }
+
+    &:active {
+      color: $secondary-shade;
+    }
+
+    &:active path {
+      fill: $secondary-shade;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    @include clearStyleList;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 23px;
+  }
+
+  &__link {
+    padding: 0 10px;
+    color: $grey;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    @include clearDefaultFocus;
+    @include transition;
+
+    &:last-child {
+      margin-right: -10px;
+    }
+
+    &:first-child {
+      margin-left: -10px;
+    }
+
+    &:focus {
+      color: $primary-shade;
+      background-color: $pink-violet;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &:active {
+      color: $primary-shade;
+    }
+  }
+}
+
+.menu {
+  &__list {
+    @include clearStyleList;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    padding: 0 10px;
+    color: $black;
+    font-size: 16px;
+    font-weight: 400;
+    @include clearDefaultFocus;
+    @include transition;
+
+    &:last-child {
+      margin-right: -10px;
+    }
+
+    &:first-child {
+      margin-left: -10px;
+    }
+
+    &:focus {
+      background-color: $pink-violet;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &:active {
+      color: $primary-shade;
+    }
+  }
+}
+
+.search {
+  position: relative;
+
+  &__input {
+    padding: 20px 32px 20px 60px;
+    width: 100%;
+    color: $black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    border: none;
+    border-radius: 10px;
+    background-color: $grey-light;
+    @include clearDefaultFocus;
+    @include transition;
+
+    &::placeholder {
+      color: $grey;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 120%;
+    }
+
+    &:focus {
+      background-color: $pink-light;
+      outline: 2px solid $primary;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $md-grey;
+      }
+    }
+
+    &:active {
+      background-color: $grey-light;
+    }
+
+    &:active + .search__icon path {
+      fill: $primary;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 18px;
+    left: 32px;
+  }
+
+  &__btn-icon {
+    position: absolute;
+    top: 14px;
+    right: 32px;
+    @include clearDefaultFocus;
+    @include transition;
+
+    & path,
+    & circle {
+      @include transition;
+    }
+
+    &:focus path {
+      stroke: $white;
+    }
+
+    &:focus circle {
+      fill: $primary-light;
+    }
+
+    @media (any-hover: hover) {
+      &:hover path {
+        stroke: $white;
+      }
+
+      &:hover circle {
+        fill: $primary;
+      }
+    }
+
+    &:active path{
+      stroke: $primary-shade;
+    }
+
+    &:active circle {
+      fill: $primary-shade;
+    }
+  }
+}
+
+.basket-count {
+  position: absolute;
+  top: 12px;
+  left: 4px;
+  display: flex;
+  justify-content: center;
+  width: 14px;
+  height: 15px;
+  background-color: $secondary;
+  border-radius: 100%;
+
+  &__span {
+    align-self: center;
+    color: $white;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 100%;
+  }
+}

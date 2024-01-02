@@ -1,0 +1,186 @@
+@import '../media';
+
+@include laptop {
+  .container {
+    padding: 0 36px;
+  }
+
+  .btn-unfill {
+    padding: 15px 33px;
+  }
+
+  .card {
+    &__picture--dop {
+      display: none;
+    }
+
+    &__img--big {
+      object-fit: contain;
+    }
+
+    &__body {
+      padding: 0 30px 33px;
+    }
+  }
+
+  .path {
+    margin-bottom: 19px;
+  }
+
+  .main--mt {
+    margin-top: 0;
+    padding-top: 6px;
+  }
+}
+
+@include laptop-mini {
+  .container {
+    padding: 0 72px;
+  }
+
+  .card {
+    &__body {
+      row-gap: 24px;
+      padding: 0 30px 29px;
+    }
+  }
+
+  .path {
+    margin-top: -13px;
+    margin-bottom: 7px;
+  }
+
+  .main {
+    padding-top: 0;
+
+    &--mt {
+      padding-top: 17px;
+    }
+  }
+}
+
+@include tablet {
+  .container {
+    padding: 0 12px;
+  }
+
+  .card {
+    row-gap: 11px;
+
+    &__img {
+      object-fit: contain;
+    }
+
+    &__header {
+      font-size: 16px;
+
+      &--big-font {
+        font-size: 24px;
+      }
+    }
+
+    &__star {
+      top: 16px;
+      left: 16px;
+    }
+
+    &__body {
+      row-gap: 23px;
+      padding: 0 16px 16px;
+      min-height: 156px;
+    }
+  }
+}
+
+@include big-mobile {
+  .card {
+    padding-top: 39px;
+  }
+
+  .path {
+    display: none;
+  }
+
+  .star {
+    font-size: 12px;
+
+    & svg {
+      margin-right: 6px;
+    }
+  }
+
+  .in-catalog-link {
+    align-self: center;
+    margin-top: 0;
+
+    &--bottom {
+      align-self: flex-end;
+    }
+
+    &__name {
+      display: none;
+    }
+  }
+}
+
+@include mobile {
+  .section-header {
+    margin-bottom: 26px;
+    font-size: 24px;
+    line-height: 100%;
+  }
+
+  .card {
+    &__btn {
+      &--small {
+        padding: 9px 23px;
+      }
+    }
+
+    &__picture {
+      padding: 0 16px;
+
+      &--mb {
+        margin-bottom: 32px;
+      }
+    }
+
+    &__header {
+      width: 95px;
+      max-width: 222px;
+
+      &--big-font {
+        width: 100%;
+      }
+    }
+
+    &__body {
+      row-gap: 15px;
+
+      &--special {
+        row-gap: 23px;
+        padding: 0 30px 30px;
+      }
+    }
+  }
+
+  .star svg {
+    width: 13px;
+    height: 12px;
+  }
+
+  .label {
+    &__link {
+      font-size: 12px;
+    }
+  }
+
+  .main {
+    margin-top: -8px;
+
+    &--mt {
+      margin-top: -5px;
+      padding-top: 0;
+    }
+  }
+}

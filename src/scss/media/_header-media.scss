@@ -1,0 +1,115 @@
+@import '../media';
+
+@include laptop {
+  .header {
+    &::before {
+      top: 60px;
+    }
+
+    &__logo {
+      align-self: center;
+    }
+
+    &__menu {
+      align-self: center;
+    }
+  }
+
+  .nav {
+    &__list {
+      justify-content: inherit;
+      column-gap: 64px;
+      padding-left: 0;
+    }
+  }
+
+  .menu {
+    &__list {
+      padding-left: 32px;
+    }
+  }
+}
+
+@include laptop-mini {
+  .header {
+    &__logo {
+      margin-left: -4px;
+      padding-top: 10px;
+    }
+
+    &__menu {
+      align-self: flex-start;
+    }
+
+    &__search {
+      margin-left: -4px;
+    }
+  }
+
+  .nav {
+    &__list {
+      column-gap: 35px;
+    }
+  }
+
+  .menu {
+    &__list {
+      margin: 0 -4px;
+      padding-left: 0;
+    }
+
+    &__link {
+      font-size: 14px;
+    }
+  }
+
+  .search {
+    &__btn-icon {
+      top: 12px;
+      right: 29px;
+    }
+  }
+}
+
+@include tablet {
+  .header {
+    margin-bottom: 30px;
+
+    &::before {
+      top: 0;
+    }
+
+    &__logo {
+      justify-self: center;
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    &__search {
+      margin-left: 0;
+    }
+
+    &__phone {
+      font-size: 13.7px;
+    }
+  }
+
+  .menu {
+    overflow-x: scroll;
+
+    &__list {
+      justify-content: initial;
+      column-gap: 30px;
+      min-width: 641px;
+      padding-left: 4px;
+    }
+  }
+
+  .search {
+    &__btn-icon {
+      right: 32px;
+    }
+  }
+}

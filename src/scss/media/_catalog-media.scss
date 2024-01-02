@@ -1,0 +1,89 @@
+@import '../media';
+
+@include laptop {
+  .page-catalog {
+    padding-top: 10px;
+  }
+
+  .filters {
+    flex-direction: row;
+    column-gap: 22px;
+
+    &__container {
+      width: 100%;
+      max-width: 156px;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+
+    &__banner-card {
+      display: none;
+    }
+
+    &__header {
+      display: none;
+    }
+
+    &__subheader--price {
+      margin-bottom: 4px;
+    }
+  }
+
+  .price-filter {
+    &__input {
+      padding: 5px 13px;
+    }
+  }
+}
+
+@include laptop-mini {
+  .page-catalog {
+    margin-bottom: 70px;
+    padding-top: 22px;
+  }
+
+  .catalog {
+    &__card:nth-child(7),
+    &__card:nth-child(8),
+    &__card:nth-child(9) {
+      display: none;
+    }
+  }
+
+  .pagination {
+    padding-left: 0;
+
+    &__btn:nth-child(3) {
+      display: inline-block;
+    }
+  }
+}
+
+@include tablet {
+  .page-catalog {
+    margin-top: -4px;
+    padding-top: 0;
+
+    &__header {
+      margin-bottom: 28px;
+    }
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    justify-content: inherit;
+    row-gap: 0;
+    column-gap: 27px;
+
+    &__container {
+      width: auto;
+      max-height: 132px;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

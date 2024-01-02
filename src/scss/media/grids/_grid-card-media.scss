@@ -1,0 +1,136 @@
+@import '../../media';
+
+@include laptop {
+  .product {
+    &__container {
+      grid-template-columns: repeat(9, 1fr);
+      row-gap: 79px;
+    }
+
+    &__picture {
+      grid-column: 1 / span 5;
+      grid-row: 1;
+    }
+
+    &__info-prod {
+      grid-column: 6 / span 4;
+      grid-row: 1;
+    }
+
+    &__description {
+      grid-column: 1 / span 5;
+      grid-row: 2;
+    }
+
+    &__character {
+      grid-column: 6 / span 4;
+      grid-row: 2;
+    }
+  }
+
+  .similar {
+    &__container {
+      grid-template-columns: repeat(9, 1fr);
+    }
+
+    &__card:nth-child(1) {
+      grid-column: 1 / span 3;
+    }
+
+    &__card:nth-child(2) {
+      grid-column: 4 / span 3;
+    }
+
+    &__card:nth-child(3) {
+      grid-column: 7 / span 3;
+    }
+  }
+}
+
+@include laptop-mini {
+  .product {
+    &__container {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto minmax(349px, auto) auto auto;
+      row-gap: 28px;
+    }
+
+    &__picture {
+      grid-column: 1 / span 6;
+      grid-row: 1;
+    }
+
+    &__info-prod {
+      grid-column: 1 / span 6;
+      grid-row: 2;
+    }
+
+    &__description {
+      grid-column: 1 / span 6;
+      grid-row: 3;
+    }
+
+    &__character {
+      grid-column: 1 / span 6;
+      grid-row: 4;
+    }
+  }
+
+  .info-prod {
+    padding-top: 20px;
+
+    &__star {
+      top: -3px;
+      left: 2px;
+    }
+  }
+
+  .similar {
+    &__container {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &__card:nth-child(1) {
+      grid-column: 1 / span 3;
+    }
+
+    &__card:nth-child(2) {
+      grid-column: 4 / span 3;
+    }
+  }
+}
+
+@include tablet {
+  .product {
+    &__container {
+      grid-template-rows: repeat(4, auto);
+      row-gap: 16px;
+    }
+  }
+
+  .similar__container {
+    grid-template-rows: 350px;
+  }
+}
+
+@include big-mobile {
+  .product__container {
+    grid-template-rows: repeat(4, auto);
+    row-gap: 14px;
+    column-gap: 16px;
+  }
+
+  .similar__container {
+    column-gap: 16px;
+  }
+}
+
+@include mobile {
+  .product__container {
+    grid-template-rows: auto minmax(242px, auto) minmax(421px, auto) auto;
+  }
+
+  .similar__container {
+    grid-template-rows: minmax(278px, auto);
+  }
+}

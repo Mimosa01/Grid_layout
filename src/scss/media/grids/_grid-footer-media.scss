@@ -1,0 +1,78 @@
+@import '../../media';
+
+@include laptop {
+  .footer {
+    &__container {
+      grid-template-columns: repeat(9, 1fr);
+    }
+
+    &__wrapper {
+      grid-column: 1 / span 2;
+    }
+
+    &__submenu {
+      grid-column: 3 / span 7;
+    }
+  }
+}
+
+@include laptop-mini {
+  .footer {
+    &__container {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(2, auto);
+      row-gap: 20px;
+    }
+
+    &__wrapper {
+      grid-column: 1 / span 6;
+      grid-row: 1;
+    }
+
+    &__submenu {
+      grid-column: 1 / span 6;
+      grid-row: 2;
+    }
+  }
+}
+
+@include tablet {
+  .footer {
+    &__copywrite {
+      font-size: 14px;
+    }
+  }
+}
+
+@include big-mobile {
+  .footer__container {
+    column-gap: 16px;
+  }
+
+  .submenu {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, auto);
+    column-gap: 16px;
+    row-gap: 20px;
+
+    &__list:nth-child(1) {
+      grid-column: 1 / span 3;
+      grid-row: 1;
+    }
+
+    &__list:nth-child(2) {
+      grid-column: 4 / span 3;
+      grid-row: 1;
+    }
+
+    &__list:nth-child(3) {
+      grid-column: 1 / span 3;
+      grid-row: 2;
+    }
+
+    &__list:nth-child(4) {
+      grid-column: 4 / span 3;
+      grid-row: 2;
+    }
+  }
+}

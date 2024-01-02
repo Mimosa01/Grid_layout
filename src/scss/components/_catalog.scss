@@ -1,0 +1,225 @@
+@import '../mixins';
+@import '../variables';
+
+.page-catalog {
+  margin-bottom: 73px;
+
+  &__header {
+    margin-bottom: 0;
+    font-size: 24px;
+  }
+
+  &__pagination {
+    justify-self: center;
+    align-self: flex-end;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &__container:not(:last-child) {
+    margin-bottom: 27px;
+  }
+
+  &__header {
+    @include clearMarginPadding;
+    margin-bottom: 21px;
+    color: $black;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  &__subheader {
+    @include clearMarginPadding;
+    margin-bottom: 9px;
+    color: $grey-shade;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 130%;
+    @include clearDefaultFocus;
+
+    &--price {
+      margin-bottom: 1px;
+    }
+  }
+
+  &__list {
+    @include clearStyleList;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &__label {
+    margin: -3px 0 0 -3px;
+    padding: 3px;
+    border-radius: 2px;
+    @include clearDefaultFocus;
+    @include transition;
+
+    &:focus {
+      background-color: $pink-violet;
+      outline: 1px solid $primary;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        outline: 1px solid $primary;
+      }
+    }
+
+    &:active {
+      outline: 1px solid $primary-shade;
+    }
+  }
+
+  &__label-span {
+    padding-left: 32px;
+    color: $grey-shade;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  &__banner-card {
+    margin-top: auto;
+  }
+}
+
+.price-filter {
+  display: flex;
+  align-items: center;
+
+  &__span {
+    margin-right: 9px;
+    color: $grey-shade;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  &__input {
+    padding: 4px 13px;
+    max-width: 86px;
+    border: 1px solid $grey;
+    border-radius: 2px;
+    appearance: none;
+    @include clearDefaultFocus;
+    @include transition;
+
+    &:focus {
+      background-color: $pink-light;
+      border-color: $primary;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: $primary;
+      }
+    }
+
+    &:active {
+      border-color: $primary-shade;
+    }
+
+    &::placeholder {
+      color: $grey-shade;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 130%;
+    }
+
+    &:not(:last-child) {
+      margin-right: 9px;
+    }
+  }
+}
+
+.pagination {
+  padding-left: 14px;
+
+  &__btn {
+    @include clearStyleBtn;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    color: $primary;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid $primary;
+    border-radius: 10px;
+    @include clearDefaultFocus;
+    @include transition;
+
+    &:nth-child(3) {
+      display: none;
+    }
+
+    &:focus {
+      color: $white;
+      background-color: $primary-light;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $white;
+        background-color: $primary;
+      }
+    }
+
+    &:active {
+      color: $white;
+      background-color: $primary-shade;
+      border-color: $primary-shade;
+    }
+
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+
+    &--current {
+      color: $white;
+      background-color: $primary;
+    }
+  }
+}
+
+.banner-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 190px;
+  min-height: 360px;
+  background-color: $black;
+  background-image: url('../img/banner-catalog.webp');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  border-radius: 10px;
+
+  &__body {
+    padding: 30px
+  }
+
+  &__header {
+    @include clearMarginPadding;
+    color: $gold;
+    font-family: 'Playfair Display';
+    font-size: 26px;
+    font-weight: 900;
+  }
+
+  &__desc {
+    @include clearMarginPadding;
+    margin-bottom: 12px;
+    max-width: 200px;
+    color: $grey;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}

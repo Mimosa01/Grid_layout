@@ -1,0 +1,58 @@
+@import '../variables';
+
+// product
+.product {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(245px, auto) minmax(384px, auto);
+    column-gap: $gap;
+    row-gap: 111px;
+  }
+
+  &__picture {
+    grid-column: 1 / span 6;
+    grid-row: 1;
+  }
+
+  &__info-prod {
+    grid-column: 7 / span 6;
+    grid-row: 1;
+  }
+
+  &__description {
+    grid-column: 1 / span 6;
+    grid-row: 2;
+  }
+
+  &__character {
+    grid-column: 7 / span 6;
+    grid-row: 2;
+  }
+}
+
+// similar
+.similar {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(420px, auto);
+    gap: $gap;
+  }
+
+  &__card:nth-child(1) {
+    grid-column: 1 / span 3;
+  }
+
+  &__card:nth-child(2) {
+    grid-column: 4 / span 3;
+  }
+
+  &__card:nth-child(3) {
+    grid-column: 7 / span 3;
+  }
+
+  &__card:nth-child(4) {
+    grid-column: 10 / span 3;
+  }
+}

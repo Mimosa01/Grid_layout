@@ -1,0 +1,18 @@
+@import '../variables';
+
+.footer {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 92px;
+    gap: $gap;
+  }
+
+  &__wrapper {
+    grid-column: 1 / span 2;
+  }
+
+  &__submenu {
+    grid-column: 5 / span 8;
+  }
+}

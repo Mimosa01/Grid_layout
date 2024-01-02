@@ -1,0 +1,180 @@
+@import '../mixins';
+
+.product {
+  margin-bottom: 74px;
+}
+
+.character {
+  &__list {
+    @include clearStyleList;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 180%;
+    max-width: 544px;
+  }
+}
+
+.item {
+  display: block;
+
+  &__left {
+    display: inline-block;
+    margin-right: -30%;
+    width: 318px;
+    vertical-align: top;
+    overflow: hidden;
+    letter-spacing: normal;
+    color: $grey;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      margin: 0 -99% 0 3px;
+      vertical-align: baseline;
+      border-bottom: 1px dotted $grey;
+    }
+  }
+
+  &__right {
+    display: inline-block;
+    letter-spacing: normal;
+    padding-left: 3px;
+    margin-left: 30%;
+    width: 222px;
+    vertical-align: bottom;
+    color: $black
+  }
+}
+
+.info-prod {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 23px;
+
+  &__header {
+    @include clearMarginPadding;
+    margin-bottom: 2px;
+    color: $black;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+    @include clearDefaultFocus;
+  }
+
+  &__title {
+    @include clearMarginPadding;
+    margin-bottom: 21px;
+    color: $grey;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__price {
+    margin-bottom: 19px;
+    color: $black;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__btn {
+    margin-bottom: 12px;
+    padding: 17px 32px;
+  }
+
+  &__add-basket {
+    @include clearStyleBtn;
+    margin-left: -10px;
+    padding: 0 10px;
+    color: $primary;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    @include clearDefaultFocus;
+    @include transition;
+
+    &:focus {
+      background-color: $pink-violet;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primary-shade;
+      }
+    }
+
+    &:active {
+      color: $primary-shade;
+    }
+  }
+
+  &__star {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    @include clearMarginPadding;
+    margin-bottom: 4px;
+    color: $black;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__title {
+    @include clearMarginPadding;
+    color: $black;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 180%;
+
+    &--margin {
+      margin-bottom: 6px;
+    }
+  }
+
+  &__img {
+    max-width: 247px;
+  }
+}
+
+.images-container {
+  display: flex;
+  margin-top: auto;
+  column-gap: 32px;
+
+  &__picture {
+    width: 248px;
+  }
+}
+
+.character {
+  padding-top: 2px;
+}
+
+.similar {
+  margin-bottom: 70px;
+
+  &__header {
+    margin-bottom: 25px;
+    font-size: 24px;
+  }
+}

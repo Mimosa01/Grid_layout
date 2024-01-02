@@ -1,0 +1,57 @@
+@import '../media';
+
+@include laptop {
+  .footer {
+    &__container {
+      padding-top: 25px;
+      padding-bottom: 18px;
+    }
+  }
+
+}
+
+@include laptop-mini {
+  .footer {
+    &__container {
+      padding-top: 25px;
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__logo {
+      margin-bottom: 0;
+    }
+
+    &__icon-container {
+      margin-right: 49px;
+    }
+
+    &__icon-link:first-child {
+      margin-right: 20px;
+    }
+  }
+}
+
+@include big-mobile {
+  .footer {
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__logo {
+      margin-bottom: 18px;
+    }
+
+    &__icon-container {
+      margin-right: 0;
+    }
+  }
+
+  .submenu {
+    display: grid;
+  }
+}

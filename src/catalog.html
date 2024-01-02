@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог</title>
+  <link rel="shortcut icon" href="img/svg/favicon.svg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="resources/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  @include('templates/header.html')
+
+  <div class="container">
+    <ul class="path">
+      <li class="path__item">
+        <a href="#" class="path__link" aria-label="Вернуться на главную">Главная&nbsp;/&nbsp;</a>
+      </li>
+      <li class="path__item">
+        <a href="#" class="path__link" aria-label="Вернуться в каталог">Каталог&nbsp;/&nbsp;</a>
+      </li>
+      <li class="path__item">
+        <a href="#" class="path__link" aria-label="Вернуться в категорию диваны">Диваны&nbsp;/&nbsp;</a>
+      </li>
+      <li class="path__item path__item--current">
+        <a href="#" class="path__link" aria-label="Вернуться в категорию прямые диваны">Прямые диваны</a>
+      </li>
+    </ul>
+  </div>
+
+  <section class="page-catalog">
+    <div class="container page-catalog__container">
+
+      <!-- Aside -->
+      <aside class="page-catalog__filters filters">
+        <h3 class="filters__header">
+          Фильтровать по:
+        </h3>
+        <div class="filters__container">
+          <h4 class="filters__subheader" tabindex="0" aria-label="фильтровать по цвету">
+            Цвет
+          </h4>
+          <ul class="filters__list">
+            <li class="filters__item">
+              <label class="filters__label label">
+                <input type="checkbox" class="label__checkbox">
+                <span class="label__span label__span--filters filters__label-span">
+                  Коричневый
+                </span>
+              </label>
+            </li>
+            <li class="filters__item">
+              <label class="filters__label label">
+                <input type="checkbox" class="label__checkbox" checked>
+                <span class="label__span label__span--filters filters__label-span">
+                  Черный
+                </span>
+              </label>
+            </li>
+            <li class="filters__item">
+              <label class="filters__label label">
+                <input type="checkbox" class="label__checkbox">
+                <span class="label__span label__span--filters filters__label-span">
+                  Синий
+                </span>
+              </label>
+            </li>
+            <li class="filters__item">
+              <label class="filters__label label">
+                <input type="checkbox" class="label__checkbox">
+                <span class="label__span label__span--filters filters__label-span">
+                  Белый
+                </span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="filters__container">
+          <h4 class="filters__subheader" tabindex="0" aria-label="фильтровать по категории">
+            Категория
+          </h4>
+          <ul class="filters__list">
+            <li class="filters__item">
+              <label class="filters__label label">
+                <input type="checkbox" class="label__checkbox">
+                <span class="label__span label__span--filters filters__label-span">
+                  Диваны
+                </span>
+              </label>
+            </li>
+            <li class="filters__item">
+              <label class="filters__label label">
+                <input type="checkbox" class="label__checkbox">
+                <span class="label__span label__span--filters filters__label-span">
+                  Кресла
+                </span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="filters__container">
+          <h4 class="filters__subheader filters__subheader--price" tabindex="0" aria-label="Фильтровать по цене">
+            Цена
+          </h4>
+          <div class="filters__price-filter price-filter">
+            <span class="price-filter__span">от</span>
+            <input type="number" class="price-filter__input" placeholder="2000" min="2000" max="150000" aria-label="минимальная цена">
+            <span class="price-filter__span">до</span>
+            <input type="number" class="price-filter__input" placeholder="150 000" min="2000" max="150000" aria-label="максимальная цена">
+          </div>
+        </div>
+
+        <article class="filters__banner-card banner-card">
+          <div class="banner-card__body">
+            <h4 class="banner-card__header">
+              Оксфорд 1950
+            </h4>
+            <p class="banner-card__desc">
+              Новая коллекция изысканных кресел
+            </p>
+            <a href="#" class="in-catalog-link" aria-label="Новая коллекция изысканных кресел">
+              <span class="in-catalog-link__name">В каталог</span>
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_982)">
+                <circle cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2"/>
+                <path d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+              </svg>
+            </a>
+          </div>
+        </article>
+      </aside>
+
+      <!-- Catalog -->
+      <h2 class="section-header page-catalog__header" tabindex="0">
+        Каталог
+      </h2>
+
+      <div class="page-catalog__catalog catalog">
+
+        <article class="catalog__card card">
+          <picture class="card__picture">
+            <img src="img/r-94.webp" alt="Диван кожаный “R-94”" class="card__img">
+          </picture>
+          <div class="card__body">
+            <h6 class="card__header">
+              Диван кожаный &#750;R-94&#750;
+            </h6>
+            <span class="card__price">94 990 руб</span>
+            <button class="card__btn--small card__btn btn-unfill" aria-label="Купить диван кожаный R-94 94990 рублей">Купить</button>
+          </div>
+          <span class="card__star star">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+            </svg>
+            5.0
+          </span>
+        </article>
+
+        <article class="catalog__card card">
+          <picture class="card__picture">
+            <img src="img/t-75.webp" alt="Диван апартековый “T-75”" class="card__img">
+          </picture>
+          <div class="card__body">
+            <h6 class="card__header card__header--long">
+              Диван апартековый &#750;T-75&#750;
+            </h6>
+            <span class="card__price">69 990 руб</span>
+            <button class="card__btn--small card__btn btn-unfill" aria-label="Купить диван апартековый T-75 69990 рублей">Купить</button>
+          </div>
+          <span class="card__star star">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+            </svg>
+            4.9
+          </span>
+        </article>
+
+        <article class="catalog__card card">
+          <picture class="card__picture">
+            <img src="img/d-31.webp" alt="Диван тканевый “D-31”" class="card__img">
+          </picture>
+          <div class="card__body">
+            <h6 class="card__header">
+              Диван тканевый &#750;D-31&#750;
+            </h6>
+            <span class="card__price">28 490 руб</span>
+            <button class="card__btn--small card__btn btn-unfill" aria-label="Купить диван тканевый D-31 28490 рублей">Купить</button>
+          </div>
+          <span class="card__star star">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+            </svg>
+            4.8
+          </span>
+        </article>
+
+        <article class="catalog__card card">
+          <picture class="card__picture">
+            <img src="img/y-68.webp" alt="Диван велюровый “Y-68”" class="card__img">
+          </picture>
+          <div class="card__body">
+            <h6 class="card__header">
+              Диван велюровый &#750;Y-68&#750;
+            </h6>
+            <span class="card__price">22 990 руб</span>
+            <button class="card__btn--small card__btn btn-unfill" aria-label="Купить диван велюровый Y-68 22990 рублей">Купить</button>
+          </div>
+          <span class="card__star star">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+            </svg>
+            4.8
+          </span>
+        </article>
+
+        <article class="catalog__card card">
+          <picture class="card__picture">
+            <img src="img/w-95.webp" alt="Диван из шинила “W-95”" class="card__img">
+          </picture>
+          <div class="card__body">
+            <h6 class="card__header">
+              Диван из шинила &#750;W-95&#750;
+            </h6>
+            <span class="card__price">22 990 руб</span>
+            <button class="card__btn--small card__btn btn-unfill" aria-label="Купить диван из шинила W-95 22990 рублей">Купить</button>
+          </div>
+          <span class="card__star star">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+            </svg>
+            4.8
+          </span>
+        </article>
+
+        <article class="catalog__card card">
+          <picture class="card__picture">
+            <img src="img/g-41.webp" alt="Диван флоковый “G-41”" class="card__img">
+          </picture>
+          <div class="card__body">
+            <h6 class="card__header">
+              Диван флоковый &#750;G-41&#750;
+            </h6>
+            <span class="card__price">17 990 руб</span>
+            <button class="card__btn--small card__btn btn-unfill" aria-label="Купить диван флоковый G-41 17990 рублей">Купить</button>
+          </div>
+          <span class="card__star star">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+            </svg>
+            4.8
+          </span>
+        </article>
+
+        <article class="catalog__card card">
+          <picture class="card__picture">
+            <img src="img/v-43.webp" alt="Диван шиниловый “V-43”" class="card__img">
+          </picture>
+          <div class="card__body">
+            <h6 class="card__header">
+              Диван шиниловый &#750;V-43&#750;
+            </h6>
+            <span class="card__price">19 990 руб</span>
+            <button class="card__btn--small card__btn btn-unfill" aria-label="Купить шиниловый V-43 19990 рублей">Купить</button>
+          </div>
+          <span class="card__star star">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+            </svg>
+            4.8
+          </span>
+        </article>
+
+        <article class="catalog__card card">
+          <picture class="card__picture">
+            <img src="img/s-99.webp" alt="Диван велюровый “S-99”" class="card__img">
+          </picture>
+          <div class="card__body">
+            <h6 class="card__header">
+              Диван велюровый &#750;S-99&#750;
+            </h6>
+            <span class="card__price">19 990 руб</span>
+            <button class="card__btn--small card__btn btn-unfill" aria-label="Купить диван велюровый S-99 19990 рублей">Купить</button>
+          </div>
+          <span class="card__star star">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+            </svg>
+            4.7
+          </span>
+        </article>
+
+        <article class="catalog__card card">
+          <picture class="card__picture">
+            <img src="img/f-85.webp" alt="Диван из кожзама “F-85”" class="card__img">
+          </picture>
+          <div class="card__body">
+            <h6 class="card__header">
+              Диван из кожзама &#750;F-85&#750;
+            </h6>
+            <span class="card__price">26 990 руб</span>
+            <button class="card__btn--small card__btn btn-unfill" aria-label="Купить диван из кожзама F-85 26990 рублей">Купить</button>
+          </div>
+          <span class="card__star star">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.2257 5.28193L10.5089 4.59758L8.40032 0.330127C8.34273 0.213287 8.24799 0.118702 8.13095 0.0612089C7.83742 -0.0834504 7.48074 0.037099 7.33398 0.330127L5.22543 4.59758L0.508622 5.28193C0.378579 5.30047 0.259684 5.36167 0.168654 5.45441C0.0586046 5.56733 -0.00203778 5.71924 5.22879e-05 5.87678C0.00214235 6.03431 0.0667938 6.18457 0.179801 6.29454L3.59248 9.61614L2.78622 14.3064C2.76731 14.4156 2.7794 14.5278 2.82113 14.6304C2.86285 14.733 2.93253 14.8218 3.02228 14.8869C3.11202 14.952 3.21823 14.9906 3.32886 14.9985C3.4395 15.0064 3.55013 14.9831 3.64821 14.9314L7.86715 12.717L12.0861 14.9314C12.2013 14.9926 12.335 15.013 12.4632 14.9908C12.7865 14.9352 13.0038 14.6291 12.9481 14.3064L12.1418 9.61614L15.5545 6.29454C15.6474 6.20367 15.7087 6.08497 15.7273 5.95515C15.7774 5.63059 15.5508 5.33015 15.2257 5.28193Z" fill="#FF862F"/>
+            </svg>
+            4.7
+          </span>
+        </article>
+
+      </div>
+
+      <div class="page-catalog__pagination pagination">
+        <button class="pagination__btn pagination__btn--current" aria-label="Перейти на первую страницу">1</button>
+        <button class="pagination__btn" aria-label="Перейти на вторую страницу">2</button>
+        <button class="pagination__btn" aria-label="Перейти на третью страницу">3</button>
+      </div>
+
+    </div>
+  </section>
+
+  @include('templates/footer.html')
+
+</body>
+</html>

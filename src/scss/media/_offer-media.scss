@@ -1,0 +1,105 @@
+@import '../media';
+
+@include laptop {
+  .cooperation {
+    &__section {
+      max-width: 842px;
+    }
+  }
+}
+
+@include laptop-mini {
+  .cooperation {
+    &__section {
+      max-width: 100%;
+    }
+
+    &__subheader {
+      margin-bottom: 13px;
+    }
+
+    &__list {
+      padding-left: 18px;
+      width: 628px;
+    }
+  }
+}
+
+@include tablet {
+  .cooperation {
+    &__list {
+      max-width: 100%;
+    }
+  }
+}
+
+@include big-mobile {
+  .cooperation {
+    &__title {
+      font-size: 14px;
+    }
+
+    &__offer-bg {
+      background-image: url('../img/pencil-mob.webp');
+    }
+  }
+
+  .offer-header {
+    font-size: 16px;
+  }
+}
+
+@include mobile {
+  .cooperation {
+    &__offer {
+      padding: 0 0 0 68px;
+      max-width: 258px;
+    }
+
+    &__header {
+      font-size: 24px;
+    }
+
+    &__section-header {
+      margin-bottom: 13px;
+      font-size: 16px;
+    }
+
+    &__subheader {
+      margin-bottom: 11px;
+    }
+
+    &__item {
+      margin-bottom: 9px;
+    }
+
+    &__offer {
+      padding-left: 52px;
+    }
+
+    &__offer-bg {
+      background-size: auto;
+    }
+  }
+
+  .mini-header {
+    margin-bottom: 11px;
+    font-size: 14px;
+  }
+
+  .supliers {
+    margin-bottom: 30px;
+  }
+
+  .advantages {
+    margin-bottom: 30px;
+
+    &__title {
+      margin-bottom: 11px;
+    }
+  }
+
+  .guarantees .cooperation__section-header {
+    margin-bottom: 12px;
+  }
+}

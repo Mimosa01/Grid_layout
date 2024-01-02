@@ -1,0 +1,456 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: $black;
+  font-family: $defaultFont;
+  line-height: normal;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: $containerMaxWidth;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+	text-decoration: none;
+  color: inherit;
+}
+
+.hide {
+  display: none;
+}
+
+.path {
+  @include clearStyleList;
+}
+
+.btn-icon {
+  @include clearStyleBtn;
+}
+
+.btn-fill {
+  @include clearStyleBtn;
+  padding: 20px 32px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: $primary;
+  border-radius: 10px;
+  @include clearDefaultFocus;
+  @include transition;
+
+  &:focus {
+    background-color: $primary-light;
+    outline: 2px solid $primary-shade;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $primary-light;
+    }
+  }
+
+  &:active {
+    background-color: $primary-shade;
+  }
+}
+
+.btn-unfill {
+  @include clearStyleBtn;
+  padding: 16px 33px;
+  color: $primary;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: transparent;
+  border: 2px solid $primary;
+  border-radius: 10px;
+  @include clearDefaultFocus;
+  @include transition;
+
+  &:focus {
+    color: $white;
+    background-color: $primary-light;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: $white;
+      background-color: $primary-light;
+    }
+  }
+
+  &:active {
+    color: $white;
+    background-color: $primary-shade;
+  }
+}
+
+.section-header {
+  @include clearMarginPadding;
+  margin-bottom: 21px;
+  color: $black;
+  font-size: 32px;
+  font-weight: 400;
+  @include clearDefaultFocus;
+}
+
+// card
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  row-gap: 10px;
+  padding-top: 60px;
+  background-color: $grey-light;
+  border-radius: 10px;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 21px;
+    padding: 0 30px 30px;
+    width: 100%;
+    max-width: 296px;
+  }
+
+  &__body-wrapper {
+    display: flex;
+    width: 100%;
+    column-gap: 68px;
+  }
+
+  &__picture {
+    &--dop {
+      align-self: flex-end;
+      padding-bottom: 29px;
+    }
+  }
+
+  &__header {
+    @include clearMarginPadding;
+    max-width: 223px;
+    color: $black;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+
+    &--long {
+      max-width: 336px;
+    }
+  }
+
+  &__price-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__price {
+
+    &-current {
+      color: $secondary;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 130%;
+    }
+
+    &-previous {
+      color: $grey;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 130%;
+    }
+  }
+
+  &__btn {
+    align-self: flex-start;
+  }
+
+  &__discount {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 92px;
+    height: 34px;
+  }
+
+  &__star {
+    position: absolute;
+    top: 31px;
+    left: 30px;
+    height: 21px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.discount {
+  padding-left: 12px;
+  color: $white;
+  font-size: 14px;
+  font-weight: 700;
+  background-image: url('../img/svg/discount-bg.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.star {
+  display: flex;
+  align-items: center;
+  color: $secondary;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+
+  & svg {
+    margin-right: 5px;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  cursor: pointer;
+
+  &__checkbox:checked + &__span::after {
+    opacity: 1;
+  }
+
+  &__checkbox:checked + &__span::before {
+    opacity: 0;
+  }
+
+  &__checkbox {
+    appearance: none;
+    @include transition;
+    @include clearDefaultFocus;
+
+    &:focus + .label__span::before{
+      outline: 2px solid $primary;
+    }
+
+    @media (any-hover: hover) {
+      &:hover .label{
+        color: $primary-shade;
+      }
+    }
+  }
+
+  &__span {
+    position: relative;
+    @include transition;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      background-image: url("../img/svg/chekbox-border.svg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 1;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 1px;
+      width: 14px;
+      height: 14px;
+      background-image: url("../img/svg/chekbox.svg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transform: translateY(-50%);
+    }
+
+    &--filters::before {
+      width: 20px;
+      height: 20px;
+    }
+
+    &--filters::after {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__link {
+    color: $primary;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration-line: underline;
+    @include transition;
+    @include clearDefaultFocus;
+
+    &:focus {
+      color: $primary-shade;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primary-light;
+      }
+    }
+  }
+}
+
+.path {
+  display: flex;
+  margin-top: -15px;
+  margin-bottom: 29px;
+  &__item {
+    color: $grey;
+    font-size: 14px;
+    font-weight: 400;
+
+    &--current {
+      color: $primary-shade;
+    }
+  }
+
+  &__link {
+    @include clearDefaultFocus;
+    @include transition;
+    letter-spacing: 0.2px;
+
+    &:focus {
+      color: $primary-shade;
+      background-color: $pink-violet;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &:active {
+      color: $primary-shade;
+    }
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.logo {
+  @include clearDefaultFocus;
+}
+
+.main {
+  padding-top: 11px;
+
+  &-mt {
+    margin-top: -8px;
+  }
+}
+
+.in-catalog-link {
+  display: flex;
+  margin-top: auto;
+  color: $primary;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 120%;
+  @include clearDefaultFocus;
+  @include transition;
+
+  &__name {
+    margin-right: 5px;
+  }
+
+  & svg > path,
+  & svg > circle {
+    @include transition;
+  }
+
+  &:focus .category__link-name::after {
+    transform: scaleX(1);
+  }
+
+  &:focus path {
+      stroke: $white;
+  }
+
+  &:focus circle {
+    fill: $primary;
+  }
+
+  @media (any-hover: hover) {
+    &:hover .category__link-name::after{
+      transform: scaleX(1);
+    }
+
+    &:hover path {
+      stroke: $white;
+    }
+
+    &:hover circle {
+      fill: $primary-light;
+    }
+  }
+
+  &:active {
+    color: $primary-shade;
+  }
+
+  &:active .category__link-name::after {
+    background-color: $primary-shade;
+    transform: scaleX(1);
+  }
+
+  &:active path {
+      stroke: $white;
+  }
+
+  &:active circle {
+    stroke: $primary-shade;
+    fill: $primary-shade;
+  }
+
+  &__link-name {
+    position: relative;
+    margin-right: 5px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $primary;
+      transform: scaleX(0);
+      @include transition;
+    }
+  }
+}

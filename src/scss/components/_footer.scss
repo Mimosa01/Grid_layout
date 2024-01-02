@@ -1,0 +1,112 @@
+@import '../mixins';
+@import '../variables';
+
+.footer {
+  background-color: $md-grey;
+
+  &__container {
+    padding-top: 24px;
+    padding-bottom: 20px;
+  }
+
+  &__bottom {
+    padding: 5px 0;
+    background-color: $grey-light;
+  }
+
+  &__copywrite {
+    display: block;
+    margin: 0 auto;
+    padding-left: 16px;
+    max-width: 150px;
+    color: $grey;
+    font-size: 14px;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 26px;
+  }
+
+  &__icon-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 81px;
+  }
+
+  &__icon-link {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: -3px 0 0 -3px;
+    padding: 3px;
+    @include clearDefaultFocus;
+    @include transition;
+
+    & path {
+      @include transition;
+    }
+
+    &:focus {
+      background-color: $primary-light;
+    }
+
+    &:focus path{
+      fill: $white;
+    }
+
+    @media (any-hover: hover) {
+      &:hover path{
+        fill: $primary;
+      }
+    }
+
+    &:active path{
+      fill: $primary-shade;
+    }
+  }
+}
+
+.submenu {
+  display: flex;
+  justify-content: space-between;
+
+  &__list {
+    @include clearStyleList;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 7px;
+  }
+
+  &__header {
+    @include clearMarginPadding;
+    color: $black;
+    font-size: 16px;
+    font-weight: 400;
+    @include clearDefaultFocus;
+  }
+
+  &__link {
+    color: $grey;
+    font-size: 14px;
+    font-weight: 400;
+    @include clearDefaultFocus;
+    @include transition;
+
+    &:focus {
+      color: $primary-shade;
+      background-color: $pink-violet;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &:active {
+      color: $primary-shade;
+    }
+  }
+}

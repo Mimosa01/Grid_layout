@@ -1,0 +1,125 @@
+@import "../mixins";
+@import '../variables';
+
+.cooperation {
+  &__section {
+    margin-bottom: 32px;
+    max-width: 842px;
+  }
+
+  &__header {
+    @include clearMarginPadding;
+    margin-bottom: 27px;
+    color: $black;
+    font-size: 32px;
+    font-weight: 400;
+    @include clearDefaultFocus;
+  }
+
+  &__subheader {
+    @include clearMarginPadding;
+    margin-bottom: 12px;
+    color: $secondary;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__section-header {
+    @include clearMarginPadding;
+    margin-bottom: 12px;
+    color: $black;
+    font-size: 24px;
+    font-weight: 400;
+    @include clearDefaultFocus;
+  }
+
+  &__title {
+    @include clearMarginPadding;
+    color: $grey-shade;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 180%;
+  }
+
+  &__paragraph {
+    padding-left: 37px;
+    max-width: 624px;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__bg {
+    background-repeat: no-repeat;
+    background-size: inherit;
+    background-position: top left;
+
+    &--network {
+      background-image: url('../img/svg/network.svg');
+    }
+
+    &--briefcase {
+      background-image: url('../img/svg/briefcase.svg');
+    }
+
+    &--git-pull {
+      background-image: url('../img/svg/git-pull-request.svg');
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  &__item {
+    margin-bottom: 13px;
+    padding-left: 7px;
+    color: $secondary;
+  }
+
+  &__offer {
+    padding: 22px 0;
+    padding-left: 109px;
+    max-width: 624px;
+  }
+
+  &__offer-bg {
+    background-image: url('../img/pencil.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+  }
+
+  &__section:last-child {
+    margin-bottom: 70px;
+  }
+}
+
+.offer-header {
+  @include clearMarginPadding;
+  color: $black;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 150%;
+  @include clearDefaultFocus;
+}
+
+.supliers {
+  margin-bottom: 33px;
+}
+
+.benefits {
+  &__title {
+    line-height: 150%;
+  }
+}
+
+.advantages {
+  margin-bottom: 33px;
+
+  &__title {
+    margin-bottom: 13px;
+  }
+}
